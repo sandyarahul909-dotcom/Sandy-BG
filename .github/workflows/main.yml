@@ -30,11 +30,11 @@ jobs:
 
     - name: Build APK with Buildozer
       run: |
-        buildozer -v android debug
+        # ఒకవేళ బిల్డ్ ఫెయిల్ అయితే టాప్ 20 లైన్ల ఎర్రర్లను ఇక్కడే స్క్రీన్ పై చూపించేలా సెటప్ చేసాము
+        buildozer -v android debug || (echo "=== TOP 20 BUILD ERRORS ===" && tail -n 20 ~/.buildozer/buildozer.log 2>/dev/null || tail -n 20 config.log 2>/dev/null || echo "Build failed inside buildozer compiler." && exit 1)
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: Sandy-BG-APK
         path: bin/*.apk
-
