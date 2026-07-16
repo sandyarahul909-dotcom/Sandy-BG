@@ -11,6 +11,7 @@ android.api = 33
 android.minapi = 24
 android.private_storage = True
 orientation = portrait
+android.accept_sdk_license = True
 
 [buildozer]
 log_level = 2
