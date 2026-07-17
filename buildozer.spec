@@ -5,7 +5,7 @@ package.domain = org.sandy
 source.dir = .
 source.include_exts = py,png,jpg,onnx
 version = 0.1
-requirements = python3,kivy,opencv-python,numpy
+requirements = python3,kivy==2.2.0,opencv-python,numpy
 android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,CAMERA
 android.api = 33
 android.minapi = 24
